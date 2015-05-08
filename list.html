@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>list</title>
+			<style>
+				.hidden {
+					display: none;
+				}
+
+				.button {
+					marign: 10px;
+				}
+
+			</style>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+			<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+			<script>
+				console.log($);
+					$(document).ready( function () {
+
+						$('button').click(
+							function toggleContent() {
+								$(this).next('p').toggleClass('hidden');
+								$(this).nextAll('button').toggleClass('hidden');
+
+							});
+
+						$('button').fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+
+						$('#Delete').click(function(event) {
+						$("p").remove();
+						$("#item").html("");
+						});
+
+						$("#Done").click(function(event) {
+						$("#item").remove();
+						});
+
+						(function($) {
+  							var allPanels = $('.accordion > dd').hide();
+    
+  								$('.accordion > dt > a').click(function() {
+   							 	allPanels.slideUp();
+   				 				$(this).parent().next().slideDown();
+   				 				return false;
+ 						 		});
+
+						})(jQuery);
+					});
+			</script>
+			<style type="text/css">
+				body {
+					background-image: url('https://secure.static.tumblr.com/76901e9cbc80a7521497831f3ae499ed/ww5iwv9/q7Emyarbs/tumblr_static_bg-header.jpg');
+				}
+	 			h1 {
+	 				border: 5px solid DarkCyan;
+	 				color: Gray;
+	 				font-family: Futurist Fixed-width;
+	 				font-weight: bold;
+	 				margin-left: 40%;
+	 				max-width: 80px;
+	 			}
+
+				li {
+					font-size: 30px;
+					list-style-type: none;
+					font-family: monospace;
+				}
+      			button {
+      				margin: 0 auto;
+      				max-width: 400px;
+     			 }
+     			 #headline {
+      				background-color: Wheat;
+					height: 20px;
+      			}
+     			 #footer {
+      				background-color: black;
+      				height: 30px;
+      			}
+
+     			 p {
+      				background-color: BurlyWood;
+      				border-radius: 10px;
+      				margin: 0 auto;
+      				max-width: 300px;
+      				text-align: center;
+					border: 3px solid SeaGreen;
+      			}
+				 .hidden {
+	 				margin-left: 40%;
+	 			}
+				 #add {
+	 				margin-left: 40%;
+	 				margin-top: 40px;
+	 				width: 300px;
+	 			}
+				 button {
+	 				color:SeaGreen;
+	 			}
+				 dt {
+	 				margin-left: 430px;
+	 				max-height: 40px;
+					max-width: 300px;
+	 			}
+
+				 a {
+	 				color: purple;
+	 				text-decoration: none;
+				 }
+			</style>
+		</head>
+		<body>
+			<div id="headline"></div>
+ 			<h1 >Trck:ME</h1>
+			<ol>
+				<li>
+					<button id="item" class="btn btn-danger btn-lg btn-block">Kale</button>
+					<p class="hidden">get Almond milk, regular milk isnt the greatest</p>
+		 			<button id="Delete" class="hidden" type="button">Delete</button>   
+		 			<button id="Done" class="hidden" type="button">Done</button>
+		 			<dl class="accordion">
+						<dt class="btn btn-warning btn-lg btn-block"><a href="">Panel 1</a></dt>
+						<dd>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</dd>
+						<dt class="btn btn-warning btn-lg btn-block"><a href="">Panel 2</a></dt>
+						<dd>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</dd>
+						<dt class="btn btn-warning btn-lg btn-block"><a href="">Panel 3</a></dt>
+						<dd>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</dd>
+					</dl>
+				</li>
+
+				<li>
+					<button class="btn btn-danger btn-lg btn-block" class="progress-button green">Tomatoes</button>
+					<p class="hidden">Make sure they are ripe</p>
+					<button class="hidden" type="button">Delete</button>    
+		 			<button class="hidden" type="button">Done</button>
+				</li>
+
+				<li>
+					<button class="btn btn-danger btn-lg btn-block" class="progress-button green">Potatoes</button>
+					<p class="hidden">get Almond milk, regular milk isnt the greatest</p>
+		 			<button class="hidden" type="button">Delete</button>     
+					<button class="hidden" type="button">Done</button>
+				</li>
+
+				<li>
+					<button class="btn btn-danger btn-lg btn-block" class="progress-button green">Spinach</button>
+					<p class="hidden">get Almond milk, regular milk isnt the greatest</p>
+		 			<button class="hidden" type="button">Delete</button>     
+		 			<button class="hidden" type="button">Done</button>
+				</li>
+
+				<li>
+					<button class="btn btn-danger btn-lg btn-block" class="progress-button green">Milk</button>
+					<p class="hidden">get Almond milk, regular milk isnt the greatest</p>
+		 			<button class="hidden" type="button">Delete</button>   
+		 			<button class="hidden" type="button">Done</button>
+				</li>
+			</ol>
+			<button id="add" class="btn btn-success btn-lg" class="col-md-8">Add New Item</button>
+		</body>
+	</html>
